@@ -9,6 +9,16 @@ app.set('view engine','ejs');
 app.set(express.static('public'));
 
 //ROUTING//
+app.get('/',function(req,res){
+    res.render('home');
+});
+app.get('/profile', function(req,res){
+    res.send('This is the Profile Page - Create profile.ejs and render');
+});
+app.get('/profile/:id',function(req,res){
+    var id = req.params.id;
+    res.send('This is the profile page of ' + id);
+});
 
 
 //LISTENING TO SERVER//
